@@ -17,10 +17,6 @@ int randomizer(int choices) {
 	return choice;
 }
 
-void ignoreLine() {
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
 void displayIntro(std::vector<int> doors) {
 	std::cout << "\nYou are in a large room containing " << doors.size()
 		<< " doors.\n"
@@ -40,7 +36,7 @@ int chooseDoor(std::vector<int> doors) {
 		std::cin >> std::ws >> door;
 		if(std::cin.fail()){
 			std::cin.clear();
-			ignoreLine();
+			Delay::ignoreInput();
 		}
 	}
 	return door;
@@ -50,7 +46,7 @@ void checkDoor(int chosenDoor, std::vector<int>doors) {
 	using namespace std;
 	cout << "\nYou walk slowly to the door...\n";
 	Delay::sleep(2);
-	cout << "You put you ear to the door and listen...\n";
+	cout << "You put you ear to it and listen...\n";
 	Delay::sleep(2);
 	cout << "You don't hear anything, so you cautiously turn the "
 		"doorknob...\n";
@@ -62,7 +58,7 @@ void checkDoor(int chosenDoor, std::vector<int>doors) {
 
 	if(chosenDoor == friendlyDoor)
 		cout << "\nyour eye catches a glimmer of yellow light.\n"
-			<< "You found the treasure! Congradulations!";
+			<< "You found the treasure! Congratulations!";
 	else
 		cout << "\nA tiger leaps at you and mauls you to death.\n"
 			<< "You lost. RIP";
@@ -92,6 +88,6 @@ int main() {
 		checkDoor(chosenDoor, doors);
 		playAgain = newGame();
 	}
-	std::cout << "\nBye!";
+	std::cout << "\nBye!\n";
 	return 0;
 }

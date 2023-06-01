@@ -3,11 +3,14 @@
 
 #include <chrono>
 #include <thread>
+#include <limits>
 #include <string>
 #include <iostream>
 
+
 namespace Delay
 {
+	void ignoreInput();
 	void pressKey(std::string prompt);
 	void sleep(int time);
 }

@@ -1,17 +1,23 @@
 #include "delay.h"
 #include <chrono>
 #include <thread>
-#include <climits>
+#include <limits>
 #include <string>
 #include <iostream>
 
+
 namespace Delay
 {
+	void ignoreInput() {
+		std::cin.ignore(
+			std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.putback('\n');
+	}
 	void pressKey(std::string prompt) {
+		std::cin.clear();
 		do {
-
-			std::cin.clear();
 			std::cout << '\n' << prompt;
+			ignoreInput();
 		} while(std::cin.get() != '\n');
 		std::cin.clear();
 	}

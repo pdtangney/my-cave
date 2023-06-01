@@ -10,7 +10,6 @@
 #include <iostream>
 
 int randomizer(int choices);
-void ignoreLine();
 void displayIntro(std::vector<int> doors);
 int chooseDoor(std::vector<int> doors);
 void checkDoor(int chosenDoor, std::vector<int> doors);
