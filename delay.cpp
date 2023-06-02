@@ -1,8 +1,7 @@
 #include "delay.h"
-#include <chrono>
-#include <thread>
-#include <limits>
-#include <string>
+#include <chrono> 	// Needed for sleep()
+#include <thread> 	// ^                ^
+#include <limits> 	// Needed for ignoreInput()
 #include <iostream>
 
 
