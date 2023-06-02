@@ -13,13 +13,12 @@ namespace Delay
 			std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cin.putback('\n');
 	}
+
 	void pressKey(std::string prompt) {
-		std::cin.clear();
 		do {
 			std::cout << '\n' << prompt;
 			ignoreInput();
 		} while(std::cin.get() != '\n');
-		std::cin.clear();
 	}
 
 	void sleep(int time) {
